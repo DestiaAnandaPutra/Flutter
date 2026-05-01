@@ -7,129 +7,137 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Layout part 1',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const MyHomePage(title: 'Demo Layout part 1'),
       debugShowCheckedModeBanner: false,
+      title: 'Layout PPT',
+      home: const HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFF5F5F5),
+
+      appBar: AppBar(
+        title: const Text('Demo Layout part 1'),
+        backgroundColor: const Color(0xFFF7367F),
+      ),
+
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
+
+            // 🔹 HEADER
             Container(
-              padding: const EdgeInsets.symmetric(vertical: 16),
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Text(
-                        "Welcome,",
+                        'LULUS TOEFL',
                         style: TextStyle(
-                          color: Color(0xFF7367F0),
-                          fontSize: 28,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 0.25,
+                          color: Color(0xFFF7367F),
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
+                      SizedBox(height: 5),
                       Text(
-                        "2311102181 - Feb",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF4B4B4B),
-                        ),
+                        '2311102181 - Febrian Falih Alwafi',
+                        style: TextStyle(fontSize: 14),
                       ),
                     ],
                   ),
-                  const CircleAvatar(
-                    radius: 20,
-                    //backgroundImage: AssetImage('assets/profpic.png'),
-                  ),
+                  CircleAvatar(
+                    radius: 22,
+                    child: Icon(Icons.person),
+                  )
                 ],
               ),
             ),
+
+            const SizedBox(height: 30),
+
+            // 🔹 CARD STATUS (GRADIENT)
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 35),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [Color(0xFF4839EB), Color(0xFF7367F0)],
+                  colors: [
+                    Color(0xFFF4839E),
+                    Color(0xFFF7367F),
+                  ],
                 ),
-                borderRadius: BorderRadius.circular(8.0),
+                borderRadius: BorderRadius.circular(10),
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 20),
-                  const Text(
+                children: const [
+                  Text(
                     'Status tes TOEFL Anda:',
-                    style: TextStyle(color: Colors.white, fontSize: 14),
+                    style: TextStyle(color: Colors.white),
                   ),
-                  const SizedBox(height: 8),
-                  const Text(
-                    "LULUS",
+                  SizedBox(height: 10),
+
+                  Text(
+                    'LULUS',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 28,
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: 0.25,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 20),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          'Listening\n      80',
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ),
-                        Text(
-                          'Structure\n      80',
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ),
-                        Text(
-                          'Reading\n      90',
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ),
-                      ],
-                    ),
+
+                  SizedBox(height: 20),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Listening\n80',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        'Structure\n80',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        'Reading\n90',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 20),
                 ],
               ),
             ),
-            Container(
-              child: const Text(
+
+            const SizedBox(height: 30),
+
+            // 🔹 RIWAYAT TES
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
                 'Riwayat Tes',
                 style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 28,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 0.25,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
