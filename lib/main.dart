@@ -34,7 +34,6 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-
             // 🔹 HEADER
             Container(
               padding: const EdgeInsets.all(16),
@@ -63,10 +62,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  CircleAvatar(
-                    radius: 22,
-                    child: Icon(Icons.person),
-                  )
+                  CircleAvatar(radius: 22, child: Icon(Icons.person)),
                 ],
               ),
             ),
@@ -78,10 +74,7 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [
-                    Color(0xFFF4839E),
-                    Color(0xFFF7367F),
-                  ],
+                  colors: [Color(0xFFF4839E), Color(0xFFF7367F)],
                 ),
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -135,10 +128,7 @@ class HomePage extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 'Riwayat Tes',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
           ],
