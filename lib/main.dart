@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Text(
-                        "2311102176 - Destia Ananda Putra",
+                        "2311102181 - Febrian Falih Alawafi",
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
